@@ -3,7 +3,7 @@
  * @Author: cgh
  * @Date: 2023-06-25 10:01:32
  * @LastEditors: 陈观花 2083363836@qq.com
- * @LastEditTime: 2023-06-25 13:34:31
+ * @LastEditTime: 2023-06-25 17:20:36
  * @Description: 首页
  */
 import  React, { useEffect, useState } from 'react';
@@ -58,6 +58,8 @@ const HomePage = () => {
       } else {
         setBanners(bannersTemp)
       }
+    }).catch(err => {
+      setBanners(bannersTemp)
     });
 
     // 获取列表
@@ -68,7 +70,9 @@ const HomePage = () => {
       } else {
         setNewsList(newsListTemp)
       }
-    });
+    }).catch(err => {
+      setNewsList(newsListTemp)
+    });;
   }, [])
 
   const handleDetails = (item: NewsType) => {
